@@ -1,206 +1,151 @@
-********Project Name: **Daily Journal / Notes App** ********
+# 📝 Daily Journal / Notes App
 
+A full-stack web application designed for secure, organized, and markdown-supported journaling. Users can create, edit, tag, and search their personal notes — while Admins can moderate content and manage users.
 
-****Overview :****
+---
 
-The Daily Journal / Notes App is a full-stack web application designed to help users write, organize,
-and manage daily notes or journal entries. Users can create entries using markdown formatting, tag
-their notes for easy categorization, and search through them by content, tags, or dates. The
-application is focused on simplicity, privacy, and effective journaling.
+## 📌 Overview
 
+The **Daily Journal / Notes App** allows users to:
 
+- Write daily notes or journals with **Markdown formatting**
+- Organize entries with **tags**
+- **Search and filter** by tags, content, or date
+- Enjoy a clean, minimal UI focused on distraction-free writing
+- Admins can view and manage all notes and users
 
-****Objectives :****
+---
 
-• Allow users to securely register and log in to their personal note space.
+## 🎯 Objectives
 
-• Enable users to write and edit markdown-supported journal entries.
+- 🔐 Secure registration and login (JWT)
+- ✍️ Markdown-supported journal entries
+- 🏷️ Tag-based note organization
+- 🔍 Full-text search and filtering
+- 🧘 Clean and responsive interface
+- 👨‍💼 Admin dashboard for moderation
 
-• Organize notes using tags.
+---
 
-• Provide search functionality to filter notes by date, tags, or content.
+## 👥 User Roles
 
-• Offer a clean and distraction-free writing interface.
+### 👤 User
 
+- Register & login securely  
+- Create, edit, delete notes  
+- Format with Markdown  
+- Tag and filter entries  
+- View entries by tag or date
 
+### 👨‍💼 Admin
 
+- Login with admin credentials  
+- View/delete user accounts  
+- View/edit/delete any note  
+- Access activity logs *(optional)*
 
-****User Roles :****
+---
 
-**1. User :**
+## 🔐 Authentication
 
-• Register and log in securely.
+- JWT-based login for both users and admins  
+- Role-based access control using **Spring Security**  
+- Passwords encrypted using **BCrypt**
 
-• Create, edit, and delete notes/journal entries.
+---
 
-• Format content using markdown.
+## 🧰 Technology Stack
 
-• Tag entries and search/filter them.
+| Layer       | Tech                            |
+|-------------|----------------------------------|
+| Frontend    | React.js, Tailwind CSS           |
+| Editor      | React Markdown / UIW MDE         |
+| Backend     | Spring Boot, Spring Security     |
+| Auth        | JWT (JSON Web Token)             |
+| Database    | PostgreSQL                       |
+| Optional    | Local storage sync, dark mode    |
 
-• View all previous entries in chronological order or by tag.
+---
 
+## 🚀 Core Features
 
+- Rich Markdown editor with preview  
+- Tagging system for categorization  
+- Search/filter by tag, content, or date  
+- Responsive layout for mobile/tablet  
+- Admin moderation panel  
 
+---
 
+## 🔗 API Endpoints
 
-****Core Features :****
+### 📥 Auth
 
-**1. Authentication :**
+- `POST /api/auth/register` – Register new user  
+- `POST /api/auth/login` – User login  
+- `POST /api/auth/admin-login` – Admin login *(optional)*  
 
-• User registration and login using JWT.
+### 📝 Notes
 
-• Password encryption (BCrypt or similar).
+- `GET /api/notes` – Get all user notes  
+- `POST /api/notes` – Create new note  
+- `GET /api/notes/{id}` – Get single note  
+- `PUT /api/notes/{id}` – Update note  
+- `DELETE /api/notes/{id}` – Delete note  
 
-• Route protection for logged-in users only.
+### 🔐 Admin
 
+- `GET /api/admin/users` – View all users  
+- `DELETE /api/admin/users/{id}` – Delete user  
+- `GET /api/admin/notes` – View all notes  
+- `DELETE /api/admin/notes/{id}` – Delete any note  
+- `PUT /api/admin/notes/{id}` – Edit any note *(optional)*  
 
-**2. Note Creation & Editing :**
+---
 
-• Rich text editor with markdown support.
+## 🗂️ Database Schema
 
-• Auto-save or manual save option.
+### 👤 Users
 
-• Option to edit/delete existing entries.
+| Field     | Type   |
+|-----------|--------|
+| id        | UUID   |
+| name      | String |
+| email     | String (unique) |
+| password  | String (hashed) |
+| role      | String (`USER`, `ADMIN`) |
 
+### 📝 Notes
 
-**3. Tagging System :**
+| Field       | Type             |
+|-------------|------------------|
+| id          | UUID             |
+| user_id     | Foreign Key (UUID) |
+| title       | String           |
+| content     | Markdown (Text)  |
+| tags        | Array / Relation |
+| created_at  | Timestamp        |
+| updated_at  | Timestamp        |
 
-• Add one or more tags per note (e.g., #work, #personal, #ideas).
+---
 
-• Filter notes by tags.
+## 🧩 UI Components
 
+- Login / Register Pages  
+- Dashboard: List + Filters  
+- Note Editor: Markdown input + preview  
+- Note Detail View  
+- Sidebar: Tags + Search  
+- Admin Panel: User/note management
 
-**4. Search & Filter :**
+---
 
-• Full-text search by content.
+## ✅ Success Criteria
 
-• Filter notes by tag or date range.
+- JWT-secured user and admin authentication  
+- Markdown editing with live preview  
+- Tag + date filtering and full-text search  
+- Admin control over users and content  
+- Fast, responsive, and secure performance
 
-
-**5. Note Organization :**
-
-• Display notes in list view with snippet preview.
-
-• Sort by date created or last updated.
-
-• Calendar or timeline view (optional).
-
-
-
-
-
-****Technology Stack :****
-
-• **Frontend**: React.js, Tailwind CSS, Markdown Editor (e.g., React Markdown, SimpleMDE)
-
-• **Backend**: Spring Boot (Java), Spring Security
-
-• **Authentication**: JWT (JSON Web Token)
-
-• **Database**: PostgreSQL 
-
-• **Optional** Integrations: Local storage sync (for drafts), dark mode.
-
-
-
-
-
-****API Endpoints :****
-
-**1. Auth :**
-
-• POST /api/auth/register – Register new user
-
-• POST /api/auth/login – Authenticate and return JWT
-
-
-
-
-**2. Notes :**
-
-• GET /api/notes – Get all notes for user
-
-• POST /api/notes – Create a new note
-
-• GET /api/notes/{id} – Get single note
-
-• PUT /api/notes/{id} – Update note
-
-• DELETE /api/notes/{id} – Delete note
-
-
-
-
-**3. Search/Filter :**
-
-• GET /api/notes?tag={tag} – Filter notes by tag
-
-• GET /api/notes?dateFrom=...&dateTo=... – Filter by date range
-
-• GET /api/notes/search?q=... – Search notes by content
-
-
-
-
-
-****Database Schema :****
-
-**1. Users :**
-
-• id (UUID)
-
-• name
-
-• email (unique)
-
-• password (hashed)
-
-
-
-**2. Notes :**
-
-• id (UUID)
-
-• user_id (foreign key)
-
-• title
-
-• content (markdown supported)
-
-• tags (array of strings or separate relation)
-
-• created_at
-
-• updated_at
-
-
-
-
-
-****UI Components :****
-
-• Login / Register Page
-
-• Dashboard: List of notes with filters
-
-• Note Editor: Markdown input + preview
-
-• Note Detail Page: Full rendered markdown view
-
-• Sidebar: Tag filter, recent notes, search bar
-
-
-
-
-
-****Success Criteria :****
-
-• Users can log in and securely manage their journal entries.
-
-• Markdown rendering and editing work seamlessly.
-
-• Tags and search functionality improve discoverability.
-
-• Mobile-friendly and responsive layout.
-
-• Fast and secure API performance
+---
