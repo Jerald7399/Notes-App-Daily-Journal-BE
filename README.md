@@ -24,6 +24,7 @@ application is focused on simplicity, privacy, and effective journaling.
 
 
 
+
 ****User Roles :****
 
 **1. User :**
@@ -37,6 +38,7 @@ application is focused on simplicity, privacy, and effective journaling.
 • Tag entries and search/filter them.
 
 • View all previous entries in chronological order or by tag.
+
 
 
 
@@ -86,6 +88,7 @@ application is focused on simplicity, privacy, and effective journaling.
 
 
 
+
 ****Technology Stack :****
 
 • **Frontend**: React.js, Tailwind CSS, Markdown Editor (e.g., React Markdown, SimpleMDE)
@@ -96,7 +99,8 @@ application is focused on simplicity, privacy, and effective journaling.
 
 • **Database**: PostgreSQL 
 
-• **Optional** Integrations: Local storage sync (for drafts), dark mode
+• **Optional** Integrations: Local storage sync (for drafts), dark mode.
+
 
 
 
@@ -108,6 +112,7 @@ application is focused on simplicity, privacy, and effective journaling.
 • POST /api/auth/register – Register new user
 
 • POST /api/auth/login – Authenticate and return JWT
+
 
 
 
@@ -125,6 +130,7 @@ application is focused on simplicity, privacy, and effective journaling.
 
 
 
+
 **3. Search/Filter :**
 
 • GET /api/notes?tag={tag} – Filter notes by tag
@@ -132,6 +138,7 @@ application is focused on simplicity, privacy, and effective journaling.
 • GET /api/notes?dateFrom=...&dateTo=... – Filter by date range
 
 • GET /api/notes/search?q=... – Search notes by content
+
 
 
 
@@ -147,6 +154,7 @@ application is focused on simplicity, privacy, and effective journaling.
 • email (unique)
 
 • password (hashed)
+
 
 
 **2. Notes :**
@@ -168,6 +176,7 @@ application is focused on simplicity, privacy, and effective journaling.
 
 
 
+
 ****UI Components :****
 
 • Login / Register Page
@@ -179,6 +188,7 @@ application is focused on simplicity, privacy, and effective journaling.
 • Note Detail Page: Full rendered markdown view
 
 • Sidebar: Tag filter, recent notes, search bar
+
 
 
 
