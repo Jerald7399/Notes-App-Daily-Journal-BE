@@ -1,7 +1,7 @@
 ********Project Name: **Daily Journal / Notes App** ********
 
 
-****Overview****
+****Overview :****
 
 The Daily Journal / Notes App is a full-stack web application designed to help users write, organize,
 and manage daily notes or journal entries. Users can create entries using markdown formatting, tag
@@ -10,7 +10,7 @@ application is focused on simplicity, privacy, and effective journaling.
 
 
 
-****Objectives****
+****Objectives :****
 
 • Allow users to securely register and log in to their personal note space.
 
@@ -24,9 +24,9 @@ application is focused on simplicity, privacy, and effective journaling.
 
 
 
-****User Roles****
+****User Roles :****
 
-**1. User**
+**1. User :**
 
 • Register and log in securely.
 
@@ -40,9 +40,9 @@ application is focused on simplicity, privacy, and effective journaling.
 
 
 
-****Core Features****
+****Core Features :****
 
-**1. Authentication**
+**1. Authentication :**
 
 • User registration and login using JWT.
 
@@ -51,7 +51,7 @@ application is focused on simplicity, privacy, and effective journaling.
 • Route protection for logged-in users only.
 
 
-**2. Note Creation & Editing**
+**2. Note Creation & Editing :**
 
 • Rich text editor with markdown support.
 
@@ -60,21 +60,21 @@ application is focused on simplicity, privacy, and effective journaling.
 • Option to edit/delete existing entries.
 
 
-**3. Tagging System**
+**3. Tagging System :**
 
 • Add one or more tags per note (e.g., #work, #personal, #ideas).
 
 • Filter notes by tags.
 
 
-**4. Search & Filter**
+**4. Search & Filter :**
 
 • Full-text search by content.
 
 • Filter notes by tag or date range.
 
 
-**5. Note Organization**
+**5. Note Organization :**
 
 • Display notes in list view with snippet preview.
 
@@ -84,30 +84,30 @@ application is focused on simplicity, privacy, and effective journaling.
 
 
 
-****Technology Stack****
+****Technology Stack :****
 
-• Frontend: React.js, Tailwind CSS, Markdown Editor (e.g., React Markdown, SimpleMDE)
+• **Frontend**: React.js, Tailwind CSS, Markdown Editor (e.g., React Markdown, SimpleMDE)
 
-• Backend: Spring Boot (Java), Spring Security
+• **Backend**: Spring Boot (Java), Spring Security
 
-• Authentication: JWT (JSON Web Token)
+• **Authentication**: JWT (JSON Web Token)
 
-• Database: PostgreSQL 
+• **Database**: PostgreSQL 
 
-• Optional Integrations: Local storage sync (for drafts), dark mode
+• **Optional** Integrations: Local storage sync (for drafts), dark mode
 
 
 
-****API Endpoints****
+****API Endpoints :****
 
-**Auth**
+**1. Auth :**
 
 • POST /api/auth/register – Register new user
 
 • POST /api/auth/login – Authenticate and return JWT
 
 
-**Notes**
+**2. Notes :**
 
 • GET /api/notes – Get all notes for user
 
@@ -120,7 +120,7 @@ application is focused on simplicity, privacy, and effective journaling.
 • DELETE /api/notes/{id} – Delete note
 
 
-**Search/Filter**
+**3. Search/Filter :**
 
 • GET /api/notes?tag={tag} – Filter notes by tag
 
@@ -130,9 +130,9 @@ application is focused on simplicity, privacy, and effective journaling.
 
 
 
-****Database Schema****
+****Database Schema :****
 
-**Users**
+**1. Users :**
 
 • id (UUID)
 
@@ -143,7 +143,7 @@ application is focused on simplicity, privacy, and effective journaling.
 • password (hashed)
 
 
-**Notes**
+**2. Notes :**
 
 • id (UUID)
 
@@ -161,7 +161,7 @@ application is focused on simplicity, privacy, and effective journaling.
 
 
 
-****UI Components****
+****UI Components :****
 
 • Login / Register Page
 
@@ -175,7 +175,7 @@ application is focused on simplicity, privacy, and effective journaling.
 
 
 
-****Success Criteria****
+****Success Criteria :****
 
 • Users can log in and securely manage their journal entries.
 
