@@ -40,6 +40,7 @@ application is focused on simplicity, privacy, and effective journaling.
 
 
 
+
 ****Core Features :****
 
 **1. Authentication :**
@@ -84,6 +85,7 @@ application is focused on simplicity, privacy, and effective journaling.
 
 
 
+
 ****Technology Stack :****
 
 • **Frontend**: React.js, Tailwind CSS, Markdown Editor (e.g., React Markdown, SimpleMDE)
@@ -98,6 +100,7 @@ application is focused on simplicity, privacy, and effective journaling.
 
 
 
+
 ****API Endpoints :****
 
 **1. Auth :**
@@ -105,6 +108,7 @@ application is focused on simplicity, privacy, and effective journaling.
 • POST /api/auth/register – Register new user
 
 • POST /api/auth/login – Authenticate and return JWT
+
 
 
 **2. Notes :**
@@ -120,6 +124,7 @@ application is focused on simplicity, privacy, and effective journaling.
 • DELETE /api/notes/{id} – Delete note
 
 
+
 **3. Search/Filter :**
 
 • GET /api/notes?tag={tag} – Filter notes by tag
@@ -127,6 +132,7 @@ application is focused on simplicity, privacy, and effective journaling.
 • GET /api/notes?dateFrom=...&dateTo=... – Filter by date range
 
 • GET /api/notes/search?q=... – Search notes by content
+
 
 
 
@@ -161,6 +167,7 @@ application is focused on simplicity, privacy, and effective journaling.
 
 
 
+
 ****UI Components :****
 
 • Login / Register Page
@@ -172,6 +179,7 @@ application is focused on simplicity, privacy, and effective journaling.
 • Note Detail Page: Full rendered markdown view
 
 • Sidebar: Tag filter, recent notes, search bar
+
 
 
 
